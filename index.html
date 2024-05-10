@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="./styletabuada.css">
-  <script src="./tabuada.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+    <link rel="stylesheet" href="./styletabuada.css">
 </head>
 <body>
   <header><h1>Tabuada</h1></header>
@@ -13,21 +12,50 @@
   <main>
     <div class="MenuCentral">
       <div class="numero">Número:      
-      <input type="number" name="numero" id="">
-      <div><button>Gerar Tabuada</button></div>
-    </div> 
-      <div class="valores">
-        <select name="tabuada" id="seltab" size="10">
-          <option value="v1">Valor 1</option>
-          <option value="v2">Valor 2</option>
-        </select>
+        <input type="number" name="numero" id="">
       </div>
-    </div>
+      <div class="button">
+        <button onclick="somar()" style="margin: 7px 0px 0px 15px;">Gerar Tabuada</button>
+      </div>
 
+      <div class="valores">
+        <table>
+          <thead>
+            <tr>
+              <th>Valor</th>
+              <th>Resultado</th>
+            </tr>
+          </thead>
+          <tbody id="tabuadaBody">
+            <!-- Aqui serão inseridas as linhas da tabuada -->
+          </tbody>
+        </table>
+      </div>
+
+    </div> 
+    
   </main>
 
-  <footer>     &copy; CursoemVideo - 2024</p>
-  </footer>
+  <footer> &copy; CursoemVideo - 2024</footer>
 
+  <script>
+    function somar() {
+      var numero = parseInt(document.getElementsByName('numero')[0].value);
+      var tbody = document.getElementById('tabuadaBody');
+      tbody.innerHTML = ''; // Limpa o conteúdo atual
+
+      for (var i = 1; i <= 10; i++) {
+        var resultado = numero * i;
+        var tr = document.createElement('tr');
+        var tdValor = document.createElement('td');
+        var tdResultado = document.createElement('td');
+        tdValor.textContent = numero + ' x ' + i;
+        tdResultado.textContent = resultado;
+        tr.appendChild(tdValor);
+        tr.appendChild(tdResultado);
+        tbody.appendChild(tr);
+      }
+    }
+  </script>
 </body>
 </html>
