@@ -1,0 +1,47 @@
+body{
+  background-color: rgba(23, 101, 219, 0.63);
+}
+
+header{
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  margin-left: 40rem;
+  margin-top: 2rem;
+
+}
+
+.MenuCentral{
+
+  width: 40rem;
+  height: 20rem;
+  margin-left: 25rem;
+  margin-top: 0rem;
+  border-radius: 20px;
+  background-color: white;
+  text-align:start;
+}
+
+.numero{
+  display: flex;
+  padding-top: 1rem;
+  margin-left: 0.2rem;
+  
+ & input {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+ }
+}
+
+.valores{
+  margin-left: 0.2rem;
+  margin-top: 5rem;
+
+}
+
+footer{
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  margin-left: 40rem;
+  margin-top: 2rem;
+}
+
